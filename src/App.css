@@ -2,11 +2,8 @@
   text-align: center;
 }
 
-
-
-
 .signup-container {
-  max-width: 400px;
+  max-width: 90%;
   margin: auto;
   padding: 20px;
   border: 1px solid #ddd;
@@ -52,51 +49,90 @@ button {
 button:hover {
   background-color: transparent;
 }
-.arrow-button{
+
+.arrow-button {
   background-color: transparent;
 }
-.loogo{
+
+.loogo {
   display: flex;
   justify-content: left;
-  
   height: 15vh;
-  width: 9vw;
-  margin-left: 10vw;
+  width: 30%;
+  margin-left: 10%;
 }
-.tale{
+
+.tale {
   background-color: #900C3F;
   display: flex;
 }
-.enquiry{
+
+.enquiry {
   align-items: center;
   display: flex;
-  padding-left:40vw ;
+  padding-left: 40%;
   font-family: 'Poppins', sans-serif;
   font-size: 20px;
 }
-.mail{
+
+.mail {
   text-decoration: none;
   font-size: 20px;
   color: black;
 }
-.material-symbols-outlined{
+
+.material-symbols-outlined {
   padding-right: 20px;
   font-size: 50px;
-  
 }
 
-
-.welcome{
+.welcome {
   background-color: aliceblue;
-  
   font-family: 'Poppins', sans-serif;
-  
 }
 
-/* YourStyles.css */
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .signup-container {
+    max-width: 95%;
+    padding: 10px;
+  }
 
-/* ... (existing styles) */
+  .loogo {
+    height: 10vh;
+    width: 40%;
+    margin-left: 5%;
+  }
 
+  .enquiry {
+    padding-left: 20%;
+    font-size: 18px;
+  }
+
+  .material-symbols-outlined {
+    font-size: 40px;
+  }
+
+  .image-overlay h1, .image-overlay h2 {
+    padding-left: 20px;
+    font-size: 6vw;
+  }
+  
+  .image-overlay h1 {
+    padding-top: 50px;
+  }
+
+  .carousel-image {
+    height: 50vh;
+  }
+
+  .about-section, .contact-section {
+    padding: 10px;
+    margin: 10px 0;
+  }
+}
+
+/* Styles for Image Container */
 .image-container {
   position: relative;
   overflow: hidden;
@@ -112,44 +148,166 @@ button:hover {
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items:flex-start;
- 
-  color: white; /* Text color */
+  align-items: flex-start;
+  color: white;
 }
 
 .image-overlay h1, .image-overlay h2 {
   margin: 0;
-  padding-left: 200px;
-  
 }
 
 .image-overlay h1 {
   padding-top: 200px;
-  font-size: 4vw; /* Adjust the font size as needed */
+  font-size: 4vw;
 }
 
 .image-overlay h2 {
-  font-size: 4vw; /* Adjust the font size as needed */
+  font-size: 4vw;
 }
 
 .carousel-image {
   width: 100%;
   height: 80vh;
   transition: opacity 1s ease-in-out;
-  
 }
-.about-section,
-.contact-section {
+
+.about-section, .contact-section {
   padding: 20px;
   margin: 20px 0;
   border-radius: 10px;
 }
+/* Default styles for larger screens */
+.tale {
+  background-color: #900C3F;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
 
+.loogo {
+  height: 15vh;
+  width: auto;
+  margin: 0 10px;
+}
 
+.enquiry {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: white;
+}
 
-/* ... (existing styles) */
+.material-symbols-outlined {
+  font-size: 2rem;
+  padding-right: 10px;
+}
 
+.mail {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
 
+/* Styles specifically for mobile screens (below 576px) */
+@media (max-width: 576px) {
+  .tale {
+    flex-direction: column;
+    text-align: center;
+  }
 
+  .loogo {
+    height: 10vh;
+    margin: 10px auto;
+  }
 
+  .enquiry {
+    align-items: center;
+    font-size: 0.9rem;
+    padding-left: 0;
+  }
 
+  .material-symbols-outlined {
+    font-size: 1.5rem;
+    padding-right: 0;
+  }
+
+  .mail {
+    font-size: 0.9rem;
+  }
+
+  .enquiry p {
+    margin: 10px 0;
+  }
+}
+/* Default styles for larger screens */
+.tale {
+  background-color: #900C3F;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Align content to the right */
+  padding: 10px;
+}
+
+.loogo {
+  height: 15vh;
+  width: auto;
+  margin-right: 10px; /* Adjust margin for spacing */
+}
+
+.enquiry {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: white;
+}
+
+.material-symbols-outlined {
+  font-size: 2rem;
+  padding-right: 10px;
+}
+
+.mail {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
+
+/* Styles specifically for mobile screens (below 576px) */
+@media (max-width: 576px) {
+  .tale {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .loogo {
+    height: 10vh;
+    margin: 10px auto;
+  }
+
+  .enquiry {
+    align-items: center;
+    font-size: 0.9rem;
+    padding-left: 0;
+  }
+
+  .material-symbols-outlined {
+    font-size: 1.5rem;
+    padding-right: 0;
+  }
+
+  .mail {
+    font-size: 0.9rem;
+  }
+
+  .enquiry p {
+    margin: 10px 0;
+  }
+}
