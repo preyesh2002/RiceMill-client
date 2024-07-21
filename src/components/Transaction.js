@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-const serverUrl="https://ricemill-server.onrender.com"
+
+const serverUrl = "https://ricemill-server.onrender.com";
+
 const TransactionDisplay = () => {
   const [buyData, setBuyData] = useState([]);
   const [sellData, setSellData] = useState([]);
@@ -27,55 +29,53 @@ const TransactionDisplay = () => {
 
   const renderTransactionTable = (transactions) => {
     return transactions.length > 0 ? (
-      <table className="table table-striped">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Rice Type</th>
-            <th>Quantity</th>
-            <th>Transaction Type</th>
-            <th>Price per Bag</th> {/* New column for price */}
-            <th>Time of Transaction</th>
-            <th>Date of Transaction</th>
-            <th>Day of Transaction</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {transactions.map((item, index) => (
-            <tr key={index}>
-              <td>{item.name}</td>
-              <td>{item.ricetype}</td>
-              <td>{item.quantity}</td>
-              <td>{item.transactiontype}</td>
-              <td>{item.price}</td> {/* Display price */}
-              <td>{new Date(item.createdAt).toLocaleTimeString()}</td>
-              <td>{new Date(item.createdAt).toLocaleDateString()}</td>
-              <td>{getDayOfWeek(new Date(item.createdAt).getDay())}</td>
-              <td>
-                <button onClick={() => printBill(item)}>Print Bill</button>
-              </td>
+      <div className="table-container">
+        <table className="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Rice Type</th>
+              <th>Quantity</th>
+              <th>Transaction Type</th>
+              <th>Price per Bag</th> {/* New column for price */}
+              <th>Time of Transaction</th>
+              <th>Date of Transaction</th>
+              <th>Day of Transaction</th>
+              <th>Action</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {transactions.map((item, index) => (
+              <tr key={index}>
+                <td data-label="Name">{item.name}</td>
+                <td data-label="Rice Type">{item.ricetype}</td>
+                <td data-label="Quantity">{item.quantity}</td>
+                <td data-label="Transaction Type">{item.transactiontype}</td>
+                <td data-label="Price per Bag">{item.price}</td> {/* Display price */}
+                <td data-label="Time of Transaction">{new Date(item.createdAt).toLocaleTimeString()}</td>
+                <td data-label="Date of Transaction">{new Date(item.createdAt).toLocaleDateString()}</td>
+                <td data-label="Day of Transaction">{getDayOfWeek(new Date(item.createdAt).getDay())}</td>
+                <td data-label="Action">
+                  <button onClick={() => printBill(item)}>Print Bill</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     ) : (
       <p>Loading...</p>
     );
   };
 
-  // Function to get the day of the week as a string
   const getDayOfWeek = (dayIndex) => {
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     return daysOfWeek[dayIndex];
   };
 
-  // Function to print the bill
   const printBill = (transaction) => {
-    // Create a new window for printing
     const printWindow = window.open('', '_blank');
 
-    // HTML content for the bill
     const billContent = `
     <html>
     <head>
@@ -101,13 +101,8 @@ const TransactionDisplay = () => {
   </html>
     `;
 
-    // Set the HTML content for the new window
     printWindow.document.write(billContent);
-
-    // Close the document after writing
     printWindow.document.close();
-
-    // Print the bill
     printWindow.print();
   };
 

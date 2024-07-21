@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import GoogleChart from 'react-google-charts';
-const serverUrl="https://ricemill-server.onrender.com"
+
+const serverUrl = "https://ricemill-server.onrender.com";
+
 const DataDisplay = () => {
   const [data, setData] = useState([]);
 
@@ -47,18 +49,21 @@ const DataDisplay = () => {
     title: 'Aggregated Rice Quantity',
     hAxis: { title: 'Rice Type' },
     vAxis: { title: 'Aggregated Quantity' },
+    legend: { position: 'none' },
   };
 
   return (
     <div className='chart'>
       <h2>Different Rice in Godown</h2>
-      <GoogleChart
-        chartType="Bar"
-        width="100%"
-        height="100%"
-        data={chartData}
-        options={options}
-      />
+      <div className='google-chart'>
+        <GoogleChart
+          chartType="Bar"
+          width="100%"
+          height="100%" // Adjust height as needed
+          data={chartData}
+          options={options}
+        />
+      </div>
     </div>
   );
 };
