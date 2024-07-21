@@ -8,13 +8,13 @@ const AddProductform = () => {
   const [transactiontype, setTransactionType] = useState('');
   const [price, setPrice] = useState('');
   const navigate = useNavigate();
-
+const serverUrl="https://ricemill-server.onrender.com"
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     console.log(name, ricetype, quantity, transactiontype, price);
 
-    let result = await fetch('http://localhost:5000/add-product', {
+    let result = await fetch(`${serverUrl}/add-product`, {
       method: 'post',
       body: JSON.stringify({ name, ricetype, quantity, transactiontype, price }),
       headers: {

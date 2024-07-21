@@ -10,12 +10,12 @@ const Login= () => {
     const navigate = useNavigate();
   
 
-
+const serverUrl="https://ricemill-server.onrender.com"
     const handleSubmit = async (e) => {
         e.preventDefault()
         console.log('Form data submitted:',  password, email)
         
-        let result = await fetch('http://localhost:5000/Login', {
+        let result = await fetch(`${serverUrl}/Login`, {
           method: 'post',
           body: JSON.stringify({  email, password }),
           headers: {

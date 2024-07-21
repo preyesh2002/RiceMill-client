@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-
+const serverUrl="https://ricemill-server.onrender.com"
 const TransactionDisplay = () => {
   const [buyData, setBuyData] = useState([]);
   const [sellData, setSellData] = useState([]);
@@ -8,7 +8,7 @@ const TransactionDisplay = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/products');
+        const response = await fetch(`${serverUrl}/products`);
         const data = await response.json();
 
         // Separate data based on transaction type

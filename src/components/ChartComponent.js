@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import GoogleChart from 'react-google-charts';
-
+const serverUrl="https://ricemill-server.onrender.com"
 const DataDisplay = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/products');
+        const response = await fetch(`${serverUrl}/products`);
         const jsonData = await response.json();
         setData(jsonData);
       } catch (error) {

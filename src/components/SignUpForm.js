@@ -13,12 +13,12 @@ const SignUpForm = () => {
       navigate('/')
     }
   })
-
+const serverUrl="https://ricemill-server.onrender.com"
   const handleSubmit = async (e) => {
     e.preventDefault()
     console.log('Form data submitted:', name, password, email)
     // Add logic for form submission, e.g., API call, etc.
-    let result = await fetch('http://localhost:5000/register', {
+    let result = await fetch(`${serverUrl}/register`, {
       method: 'post',
       body: JSON.stringify({ name, email, password }),
       headers: {
