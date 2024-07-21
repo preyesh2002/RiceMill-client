@@ -1,0 +1,155 @@
+.App {
+  text-align: center;
+}
+
+
+
+
+.signup-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  margin-bottom: 5px;
+  display: block;
+  font-weight: bold;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: transparent;
+  color: black;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: transparent;
+}
+.arrow-button{
+  background-color: transparent;
+}
+.loogo{
+  display: flex;
+  justify-content: left;
+  
+  height: 15vh;
+  width: 9vw;
+  margin-left: 10vw;
+}
+.tale{
+  background-color: #900C3F;
+  display: flex;
+}
+.enquiry{
+  align-items: center;
+  display: flex;
+  padding-left:40vw ;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+}
+.mail{
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
+.material-symbols-outlined{
+  padding-right: 20px;
+  font-size: 50px;
+  
+}
+
+
+.welcome{
+  background-color: aliceblue;
+  
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+/* YourStyles.css */
+
+/* ... (existing styles) */
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.image-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+ 
+  color: white; /* Text color */
+}
+
+.image-overlay h1, .image-overlay h2 {
+  margin: 0;
+  padding-left: 200px;
+  
+}
+
+.image-overlay h1 {
+  padding-top: 200px;
+  font-size: 4vw; /* Adjust the font size as needed */
+}
+
+.image-overlay h2 {
+  font-size: 4vw; /* Adjust the font size as needed */
+}
+
+.carousel-image {
+  width: 100%;
+  height: 80vh;
+  transition: opacity 1s ease-in-out;
+  
+}
+.about-section,
+.contact-section {
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+
+
+/* ... (existing styles) */
+
+
+
+
+
