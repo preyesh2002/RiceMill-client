@@ -16,30 +16,21 @@ const Nav = () => {
     navigate('/signup');
   };
 
- const handleGuestLogin = async () => {
-  const guestCredentials = {
+const handleGuestLogin = async () => {
+  // Pre-defined guest user details
+  const guestUser = {
+    name: 'Guest User',
     email: 'guest@gmail.com',
-    password: '123456',
+    role: 'guest', // Additional fields if needed
   };
 
   try {
-    const result = await fetch(`${serverUrl}/Login`, {
-      method: 'post',
-      body: JSON.stringify(guestCredentials),
-      headers: {
-        'Content-type': 'application/json',
-      },
-    });
-    const user = await result.json();
+    // Store the guest user details directly in local storage
+    localStorage.setItem('user', JSON.stringify(guestUser));
+    console.log('Guest logged in successfully', guestUser);
 
-    if (user.name) {
-      localStorage.setItem('user', JSON.stringify(user));
-      console.warn('Guest logged in successfully', user);
-      navigate('/ChartComponent'); // Adjust the route as needed
-    } else {
-      console.error('Guest login failed', user);
-      alert('Failed to log in as Guest. Please try again.');
-    }
+    // Redirect to the desired route
+    navigate('/ChartComponent'); // Adjust the route as needed
   } catch (error) {
     console.error('Error during guest login', error);
     alert('An error occurred while logging in as Guest.');
