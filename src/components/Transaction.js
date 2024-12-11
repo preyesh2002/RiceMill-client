@@ -13,9 +13,11 @@ const TransactionDisplay = () => {
         const response = await fetch(`${serverUrl}/products`);
         const data = await response.json();
 
-        // Separate data based on transaction type
-        const buyTransactions = data.filter((item) => item.transactiontype === 'buy');
-        const sellTransactions = data.filter((item) => item.transactiontype === 'sell');
+        const sortedData = data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+
+        const buyTransactions = sortedData.filter((item) => item.transactiontype === 'buy');
+        const sellTransactions = sortedData.filter((item) => item.transactiontype === 'sell');
 
         setBuyData(buyTransactions);
         setSellData(sellTransactions);
