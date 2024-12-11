@@ -18,11 +18,11 @@ const LandingPage = () => {
       );
     }, 3000);
 
-    // Cleanup the interval on component unmount
+
     return () => {
       clearInterval(intervalId);
     };
-  }, []); // Empty dependency array to ensure the effect runs once on mount
+  }, []); 
 
   return (
     <div className="landing-page">
@@ -38,7 +38,7 @@ const LandingPage = () => {
             className="carousel-image"
           />
         </div>
-        <p>Providing high-quality rice for your needs</p>
+       
       </section>
       <section className="about-section" style={{ background: "#f2f2f2" }}>
         <h2>About Us</h2>
@@ -59,14 +59,14 @@ const LandingPage = () => {
           Phone: <a href="tel:+123456789"> +91 8088375054</a>
         </p>
         <p>
-          Email: <a href="mailto:info@ricemill.com"> info@srivinayakaricemill.com</a>
+          Email: <a href="mailto:preyesh2002@gmail.com"> preyesh2002@gmail.com</a>
         </p>
         <p>
           Visit us at: Sri Vinayaka Rice Mill,Belur Road,Somwarpet-571236
         </p>
       </section>
       <footer>
-        <p>&copy; 2023 Rice Mill. All rights reserved.</p>
+        <p>&copy; Developed by Preyesh C P ❤️</p>
       </footer>
     </div>
   );
