@@ -27,7 +27,7 @@ const serverUrl="https://ricemill-server.onrender.com"
 
     if (result) {
       localStorage.setItem('user', JSON.stringify(result));
-      navigate('/ChartComponent');
+      navigate('/Transaction');
     }
   };
 
