@@ -14,6 +14,36 @@ const Nav = () => {
     navigate('/signup');
   };
 
+ const handleGuestLogin = async () => {
+  const guestCredentials = {
+    email: 'guest@gmail.com',
+    password: '123456',
+  };
+
+  try {
+    const result = await fetch(`${serverUrl}/Login`, {
+      method: 'post',
+      body: JSON.stringify(guestCredentials),
+      headers: {
+        'Content-type': 'application/json',
+      },
+    });
+    const user = await result.json();
+
+    if (user.name) {
+      localStorage.setItem('user', JSON.stringify(user));
+      console.warn('Guest logged in successfully', user);
+      navigate('/ChartComponent'); // Adjust the route as needed
+    } else {
+      console.error('Guest login failed', user);
+      alert('Failed to log in as Guest. Please try again.');
+    }
+  } catch (error) {
+    console.error('Error during guest login', error);
+    alert('An error occurred while logging in as Guest.');
+  }
+};
+
   const handleLinkClick = () => {
     if (collapseRef.current && collapseRef.current.classList.contains('show')) {
       const collapseElement = new window.bootstrap.Collapse(collapseRef.current, {
@@ -43,11 +73,17 @@ const Nav = () => {
               <>
                 <Link to="SignUp" className="nav-link" onClick={handleLinkClick}>SignUp</Link>
                 <Link to="Login" className="nav-link" onClick={handleLinkClick}>Login</Link>
+                <button 
+                  className="btn btn-outline-light nav-link" 
+                  onClick={() => { handleGuestLogin(); handleLinkClick(); }}
+                >
+                  Guest Login
+                </button>
               </>
             )}
           </div>
           <div className="navbar-text text-nowrap">
-            <span className="contact-number">Contact: +91-9481113939</span>
+            <span className="contact-number">Contact: +91-8088375054</span>
           </div>
         </div>
       </div>
