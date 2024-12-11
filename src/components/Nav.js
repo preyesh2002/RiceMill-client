@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
+const serverUrl="https://ricemill-server.onrender.com"
+
 const Nav = () => {
   const auth = localStorage.getItem('user');
   const navigate = useNavigate();
