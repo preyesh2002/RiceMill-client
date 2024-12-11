@@ -76,7 +76,7 @@ const Nav = () => {
                 <Link to="SignUp" className="nav-link" onClick={handleLinkClick}>SignUp</Link>
                 <Link to="Login" className="nav-link" onClick={handleLinkClick}>Login</Link>
                 <button 
-                  className="btn btn-outline-light nav-link" 
+                  className="btn btn-outline-info nav-link" 
                   onClick={() => { handleGuestLogin(); handleLinkClick(); }}
                 >
                   Guest Login
